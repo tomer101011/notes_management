@@ -8,7 +8,7 @@ const App: React.FC = () => {
     <div className="App">
       <div className="row">
         <div className="col-12">Hello World!</div>
-      </div>
+      </div> 
     </div>
   );
 }
