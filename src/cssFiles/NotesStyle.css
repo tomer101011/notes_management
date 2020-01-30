@@ -1,0 +1,27 @@
+.formSection {
+    margin-top: 20px;
+}
+
+.headerStyle {
+    font-weight: bold;
+    font-size: 20px;
+    color: white;
+}
+
+.autoBr {
+    word-break: break-all;
+}
+
+.nameStyle {
+    background: rgba(251, 228, 190,0.4);
+    width: 270px;
+}
+
+.itemsAreaStyle{
+    width: 270px;
+    background: rgb(251, 228, 190);
+}
+
+.paddingNotes{
+    padding-bottom: 20px;
+}
