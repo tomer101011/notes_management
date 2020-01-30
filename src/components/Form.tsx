@@ -14,47 +14,56 @@ export default class Form extends React.Component<IProps> {
 
     render() {
         return (
-            <div className="formSection">
+            <div>
                 <div className="row">
                     <div className="col-md-12">
-                        <h2 className="headerStyle">Notes Management</h2>
+                        <p className="headerStyle">Notes Management</p>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-lg-4 paddingNotes">
-                        <div className="row mx-auto nameStyle">
-                            <div className="col-md-12">
-                                asdaa
+                        <div className="row mx-auto nameStyle borderStyleTop">
+                            <div className="col-10 autoBr">
+                                asdaaasdaaasdaaasdaaasdaaasdaaasdaasdadsaasdasdadsa
+                                </div>
+                            <div className="col-2">
+                                <button>X</button>
                             </div>
                         </div>
-                        <div className="row mx-auto autoBr itemsAreaStyle">
-                            <div className="col-md-12">
+                        <div className="row mx-auto autoBr itemsAreaStyle borderStyleBottom">
+                            <div className="col-12">
                                 asdaaasdaaasdaaasdaaasdaaasdaaasdaaasdaaasdaaasdaa
-                            </div>
+                                </div>
                         </div>
                     </div>
                     <div className="col-lg-4 paddingNotes">
-                        <div className="row mx-auto nameStyle">
-                            <div className="col-md-12">
-                                asdaa
+                        <div className="row mx-auto nameStyle borderStyleTop">
+                            <div className="col-10 autoBr">
+                                asdaaasdaaasdaaasdaaasdaaasdaaasdaasdadsaasdasdadsa
+                                </div>
+                            <div className="col-2">
+                                <button>X</button>
                             </div>
                         </div>
-                        <div className="row mx-auto autoBr itemsAreaStyle">
-                            <div className="col-md-12">
+                        <div className="row mx-auto autoBr itemsAreaStyle borderStyleBottom">
+                            <div className="col-12">
                                 asdaaasdaaasdaaasdaaasdaaasdaaasdaaasdaaasdaaasdaa
-                            </div>
+                                </div>
                         </div>
                     </div>
                     <div className="col-lg-4 paddingNotes">
-                        <div className="row mx-auto nameStyle">
-                            <div className="col-md-12">
-                                asdaa
+                        <div className="row mx-auto nameStyle borderStyleTop">
+                            <div className="col-10 autoBr">
+                                asdaaasdaaasdaaasdaaasdaaasdaaasdaasdadsaasdasdadsa
+                                </div>
+                            <div className="col-2">
+                                <button>X</button>
                             </div>
                         </div>
-                        <div className="row mx-auto autoBr itemsAreaStyle">
-                            <div className="col-md-12">
+                        <div className="row mx-auto autoBr itemsAreaStyle borderStyleBottom">
+                            <div className="col-12">
                                 asdaaasdaaasdaaasdaaasdaaasdaaasdaaasdaaasdaaasdaa
-                            </div>
+                                </div>
                         </div>
                     </div>
                 </div>

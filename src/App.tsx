@@ -16,7 +16,7 @@ const App: React.FC = () => {
   return (
     <div className="App container">
       <Form store={appData} />
-    </div>
+    </div >
   );
 }
 
