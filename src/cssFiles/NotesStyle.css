@@ -5,13 +5,50 @@
     margin: 20px;
 }
 
+.noteNameStyle {
+    font-weight: bold;
+    font-size: 18px;
+    cursor: default;
+    color: white;
+}
+
 .autoBr {
     word-break: break-all;
 }
 
 .nameStyle {
     background: rgba(251, 228, 190, 0.4);
-    width: 270px;
+    width: 300px;
+}
+
+.itemStyle {
+    padding: 4px !important;
+}
+
+.listStyle {
+    padding: 10px 0 10px 0;
+
+}
+
+.LinkStyle {
+    color: rgb(5, 71, 133);
+    font-weight: bold;
+    text-decoration: none !important;
+    transition: all 0.3s;
+}
+
+.deleteNote {
+    height: 30px;
+    width: 30px;
+    margin: 2px 0 2px 0;
+    transition: all 0.4s;
+}
+
+.deleteNote:hover {
+    height: 38px;
+    width: 38px;
+    margin: 2px 0 2px 0;
+    cursor: pointer;
 }
 
 .borderStyleTop {
@@ -22,12 +59,12 @@
     border-radius: 0 0 10px 10px;
 }
 
-.shiftText{
-   margin-left: 10px;
+.shiftText {
+    margin-left: 10px;
 }
 
 .itemsAreaStyle {
-    width: 270px;
+    width: 300px;
     background: rgb(251, 228, 190);
 }
 

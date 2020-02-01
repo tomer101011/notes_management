@@ -1,5 +1,7 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import { Store } from '../store-folder/Store';
+import *  as ROUTES from '../constants/routes';
 
 // interface IState {
 //   review: string;
@@ -10,13 +12,13 @@ interface IProps {
     store: Store;
 }
 
-export default class Note extends React.Component<IProps> {
+export default class NoteComp extends React.Component<IProps> {
 
     render() {
         return (
-            
+
             <div>
-                aaa
+                <Link to={ROUTES.HOME}>aa</Link>
             </div>
         )
     }
