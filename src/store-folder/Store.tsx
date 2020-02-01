@@ -20,10 +20,21 @@ export class Store {
             new Item('Computers')], new Date(), new Date())
     ];
 
-    changePage = false;
-
     doRedirect = (path: string, changePage: boolean) => {
         if (changePage)
             return <Redirect to={path} />
+    }
+
+    deleteNote = (index: number) => {
+        if (window.confirm('Are you sure you want to delete this note?'))
+            this.notesList.splice(index, 1);
+    }
+
+    addNote = () => {
+        if (this.notesList.length >= 10)
+            alert('You have reached the maximum amount of notes');
+        else
+            this.notesList.push(new Note('New Note',
+                [], new Date(), new Date()));
     }
 }
