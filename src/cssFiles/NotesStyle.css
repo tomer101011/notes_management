@@ -4,17 +4,17 @@
     color: white;
 }
 
-.newNoteStyle{
+.newNoteStyle {
     margin-bottom: 20px;
 }
 
-.noNotesStyle{
+.noNotesStyle {
     font-weight: bold;
     font-size: 20px;
     color: black;
 }
 
-.messageStyle{
+.messageStyle {
     padding: 6px;
 }
 
@@ -36,7 +36,7 @@
 
 .itemStyle {
     padding: 4px !important;
-    border: 1.6px solid rgba(0,0,0,.125) !important;
+    border: 1.6px solid rgba(0, 0, 0, .125) !important;
 }
 
 .listStyle {
@@ -44,12 +44,12 @@
 
 }
 
-.activeStyle{
+.activeStyle {
     color: white;
     background-color: #428bca !important;
 }
 
-.notActiveStyle{
+.notActiveStyle {
     background-color: white !important;
 }
 
@@ -57,7 +57,6 @@
     color: rgb(5, 71, 133);
     font-weight: bold;
     text-decoration: none !important;
-    transition: all 0.3s;
 }
 
 .deleteNote {
@@ -70,7 +69,19 @@
 .deleteNote:hover {
     height: 38px;
     width: 38px;
-    margin: 2px 0 2px 0;
+    cursor: pointer;
+}
+
+.undoStyle {
+    height: 24px;
+    width: 24px;
+    margin: 6px 0 6px 0;
+    transition: all 0.4s;
+}
+
+.undoStyle:hover {
+    height: 30px;
+    width: 30px;
     cursor: pointer;
 }
 
@@ -83,7 +94,7 @@
     padding-bottom: 4px;
 }
 
-.dateStyle{
+.dateStyle {
     height: 28px;
 }
 
@@ -93,7 +104,7 @@
 
 .itemsAreaStyle {
     width: 300px;
-    background: rgb(251, 228, 190);
+    background: #b6f5fa;
 }
 
 .paddingNotes {

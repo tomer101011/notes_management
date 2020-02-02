@@ -61,7 +61,11 @@ class Form extends React.Component<IProps, IState> {
                 </div>
                 <div className="row">
                     <div className="col-lg-12">
-                        <button onClick={()=>this.props.store.addNote()} className=" btn btn-success newNoteStyle">New note</button>
+                        <div className="btn-group" role="group" aria-label="Basic example">
+                            <button onClick={() => this.props.store.addNote()} className=" btn btn-success newNoteStyle">New note</button>
+                            <button onClick={() => this.props.store.undoDeleted()} className=" btn btn-info newNoteStyle">Undo Deleted</button>
+                        </div>
+
                     </div>
                 </div>
                 {this.loadNotes()}

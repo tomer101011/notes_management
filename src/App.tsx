@@ -9,6 +9,7 @@ import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import *  as ROUTES from './constants/routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
 
+
 decorate(Store, {
   notesList: observable, //observable are like states
   deleteNote: action,// function that modifies observables

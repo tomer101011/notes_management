@@ -47,7 +47,9 @@ const List: React.FC<IProps> = (props) => {
     return (
         <div className="col-lg-4 paddingNotes">
             <div className="row mx-auto nameStyle borderStyleTop">
-                <div className="col-2"></div>
+                <div className="col-2">
+                    <img onClick={() => props.store.undoDeleted()} className="undoStyle" title="Undo Deleted" src={require(`../pictures/undoIcon.png`)} alt="" />
+                </div>
                 <div className="col-8 autoBr noteNameStyle">
                     {props.note.name}
                 </div>
@@ -55,14 +57,14 @@ const List: React.FC<IProps> = (props) => {
                     <img onClick={() => props.store.deleteNote(props.id)} className="deleteNote" title="Delete Note" src={require(`../pictures/closeIcon.png`)} alt="" />
                 </div>
             </div>
-            <div className="row mx-auto autoBr itemsAreaStyle">
+            <div style={{ background: props.note.color }} className="row mx-auto autoBr itemsAreaStyle">
                 <div className="col-12">
                     <Link className="LinkStyle" title="Edit note" to="/note">
                         {loadList(props.note.items)}
                     </Link>
                 </div>
             </div>
-            <div className="row mx-auto itemsAreaStyle borderStyleBottom">
+            <div style={{ background: props.note.color }} className="row mx-auto itemsAreaStyle borderStyleBottom">
                 <div className="col-12 dateStyle">
                     {loadDate(props.note)}
                 </div>

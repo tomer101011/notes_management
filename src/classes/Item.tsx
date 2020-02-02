@@ -2,8 +2,8 @@ export class Item {
     name: string
     isChecked: boolean
 
-    constructor(name: string) {
+    constructor(name: string, isChecked: boolean) {
         this.name = name;
-        this.isChecked = false;
+        this.isChecked = isChecked;
     }
 }
