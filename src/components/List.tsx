@@ -3,10 +3,10 @@ import { Note } from '../classes/Note';
 import { Item } from '../classes/Item';
 import { Store } from '../store-folder/Store';
 import { Link } from 'react-router-dom';
+import *  as ROUTES from '../constants/routes';
 
 interface IProps {
     id: number;
-    note: Note;
     store: Store;
 }
 
@@ -51,35 +51,29 @@ const List: React.FC<IProps> = (props) => {
                     <img onClick={() => props.store.undoDeleted()} className="undoStyle" title="Undo Deleted" src={require(`../pictures/undoIcon.png`)} alt="" />
                 </div>
                 <div className="col-8 autoBr noteNameStyle">
-                    {props.note.name}
+                    {props.store.notesList[props.id].name}
                 </div>
                 <div className="col-2">
                     <img onClick={() => props.store.deleteNote(props.id)} className="deleteNote" title="Delete Note" src={require(`../pictures/closeIcon.png`)} alt="" />
                 </div>
             </div>
-            <div style={{ background: props.note.color }} className="row mx-auto autoBr itemsAreaStyle">
+            <div style={{ background: props.store.notesList[props.id].color }} className="row mx-auto autoBr itemsAreaStyle">
                 <div className="col-12">
-                    <Link className="LinkStyle" title="Edit note" to="/note">
-                        {loadList(props.note.items)}
+                    <Link to={{
+                        pathname: ROUTES.NOTE,
+                        state: { id: props.id }
+                    }} className="LinkStyle" title="Edit note">
+
+                        {loadList(props.store.notesList[props.id].items)}
                     </Link>
                 </div>
             </div>
-            <div style={{ background: props.note.color }} className="row mx-auto itemsAreaStyle borderStyleBottom">
+            <div style={{ background: props.store.notesList[props.id].color }} className="row mx-auto itemsAreaStyle borderStyleBottom">
                 <div className="col-12 dateStyle">
-                    {loadDate(props.note)}
+                    {loadDate(props.store.notesList[props.id])}
                 </div>
             </div>
         </div>
     )
 }
 export default List;
-
-
-
-//  <div className="list-group checkbox-list-group">
-//     <div className="list-group-item">&nbsp;<label><input type="checkbox" /><span className="list-group-item-text"><i className="fa fa-fw"></i> Default</span></label></div>
-//     <div className="list-group-item list-group-item-success"><label>&nbsp;<input type="checkbox" /><span className="list-group-item-text"><i className="fa fa-fw"></i> Success</span></label></div>
-//     <div className="list-group-item list-group-item-info"><label>&nbsp;<input type="checkbox" /><span className="list-group-item-text"><i className="fa fa-fw"></i> Info</span></label></div>
-//     <div className="list-group-item list-group-item-warning"><label>&nbsp;<input type="checkbox" /><span className="list-group-item-text"><i className="fa fa-fw"></i> Warning</span></label></div>
-//     <div className="list-group-item list-group-item-danger"><label>&nbsp;<input type="checkbox" /><span className="list-group-item-text"><i className="fa fa-fw"></i> Danger</span></label></div>
-// </div>

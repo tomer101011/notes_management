@@ -1,10 +1,11 @@
 import React from 'react';
 import './App.css';
 import './cssFiles/NotesStyle.css';
+import './cssFiles/EditNoteStyle.css';
 import { Store } from './store-folder/Store';
 import Form from './components/Form';
 import NoteComp from './components/NoteComp';
-import { decorate, observable, action/*, computed*/ } from 'mobx';
+import { decorate, observable, action } from 'mobx';
 import { HashRouter as Router, Route, Switch } from 'react-router-dom';
 import *  as ROUTES from './constants/routes';
 import 'bootstrap/dist/css/bootstrap.min.css';
@@ -13,7 +14,8 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 decorate(Store, {
   notesList: observable, //observable are like states
   deleteNote: action,// function that modifies observables
-  addNote: action
+  addNote: action,
+  undoDeleted: action
 });
 
 const appData = new Store();

@@ -32,6 +32,8 @@ export class Store {
             new Item('English', this.generateRandomTrueFalse())], this.generateRandomColor(), new Date(), new Date())
     ];
 
+    currentNote: number = -1;
+
     deletedNotes: Note[] = [];
 
     doRedirect = (path: string, changePage: boolean) => {

@@ -1,0 +1,27 @@
+.editStyle {
+    background: rgba(251, 228, 190, 0.4);
+}
+
+.noteWidth {
+    width: 80%;
+}
+
+.EditItemStyle{
+    font-weight: bold;
+}
+
+.disablePadding {
+    padding: 0 !important;
+}
+
+.editBorderStyleTop {
+    border-radius: 10px 10px 0 0;
+}
+
+.editBorderStyleBottom {
+    border-radius: 0 0 10px 10px !important;
+}
+
+.disableBorderRadiusStyle {
+    border-radius: 0 !important;
+}
