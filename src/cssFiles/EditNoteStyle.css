@@ -54,6 +54,9 @@
     text-align: center;
     border: 1px solid rgb(5, 71, 133);
     border-radius: 4px;
+}
+
+.nameEditStyle {
     margin: 8px;
 }
 

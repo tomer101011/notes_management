@@ -28,9 +28,9 @@ class NoteComp extends React.Component<IProps, IState> {
     }
 
     keydownFunction(event: any) {
-        //if the key is ESC- code 27 or Backspace- code 8, then go to home page
+        //if the key is ESC- code 27, then go to home page
         //F5 key code to avoid rendering problems- F5 will initialize currentNote index back to originial one
-        if (event.keyCode === 27 || event.keyCode === 8 || event.keyCode === 116)
+        if (event.keyCode === 27 || event.keyCode === 116)
             this.setState({ changePage: true });
     }
     //if the user presses the specified key, then the escFunction is triggered
@@ -121,7 +121,7 @@ class NoteComp extends React.Component<IProps, IState> {
             this.props.store.currentNote < this.props.store.notesList.length)
 
             return (
-                <input className="EditItemStyle" id={"n" + this.props.store.currentNote}
+                <input className="EditItemStyle nameEditStyle" id={"n" + this.props.store.currentNote}
                     defaultValue={this.props.store.notesList[this.props.store.currentNote].name} type="text" />
             );
     }
