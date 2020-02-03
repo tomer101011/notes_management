@@ -6,8 +6,17 @@
     width: 80%;
 }
 
-.EditItemStyle{
+.addCursor {
+    cursor: pointer;
+}
+
+.addNoteStyle {
+    margin-top: 8px;
+}
+
+.EditItemStyle {
     font-weight: bold;
+    color: rgb(5, 71, 133);
 }
 
 .disablePadding {
@@ -22,6 +31,10 @@
     border-radius: 0 0 10px 10px !important;
 }
 
-.disableBorderRadiusStyle {
-    border-radius: 0 !important;
+.paddItems {
+    padding: 10px 0 10px 0;
+}
+
+.marginBottomStyle {
+    margin-bottom: 10px !important;
 }

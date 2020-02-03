@@ -47,16 +47,16 @@ export class Store {
     }
 
     undoDeleted = () => {
-        let deletedNote = this.deletedNotes.pop();
-
-        if (deletedNote === undefined)
+        if (this.deletedNotes.length === 0)
             alert('There are no deleted notes left');
 
         else if (this.notesList.length >= 10)
             alert('Cannot undo. Maximum notes reached');
 
-        else
+        else {
+            let deletedNote = this.deletedNotes.pop() as Note;
             this.notesList.push(deletedNote);
+        }
     }
 
     addNote = () => {

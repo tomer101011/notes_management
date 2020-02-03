@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import { Note } from '../classes/Note';
+import { Item } from '../classes/Item';
 import { Store } from '../store-folder/Store';
 import *  as ROUTES from '../constants/routes';
 
@@ -40,6 +40,53 @@ export default class NoteComp extends React.Component<IProps, IState> {
         document.removeEventListener("keydown", this.keydownFunction, false);
     }
 
+    builtList = (items: Item[]) => {
+        let itemTags = [];
+        for (let i = 0; i < items.length; i++) {
+            if (items[i].isChecked)
+                itemTags.push(
+                    <div key={i} className="autoBr list-group-item">
+                        &nbsp;
+                        <label className="addCursor">
+                            <input defaultChecked id={"i" + i} type="checkbox" />
+                            <span title="Check item" className="list-group-item-text EditItemStyle">
+                                <i className="fa fa-fw"></i>
+                                {items[i].name}
+                            </span>
+                        </label>
+                    </div>
+                );
+            else
+                itemTags.push(
+                    <div key={i} className="autoBr list-group-item">
+                        &nbsp;
+                        <label className="addCursor">
+                            <input id={"i" + i} type="checkbox" />
+                            <span title="Check item" className="list-group-item-text EditItemStyle">
+                                <i className="fa fa-fw"></i>
+                                {items[i].name}</span>
+                        </label>
+                    </div>
+                );
+        }
+        return itemTags;
+    }
+
+    loadList = (items: Item[]) => {
+        let itemTags = this.builtList(items);
+        return (
+            <div style={{ width: "100%", backgroundColor: this.props.store.notesList[this.props.store.currentNote].color }}
+                className="col-md-12 editBorderStyleBottom disablePadding">
+
+                <button className=" btn btn-success addNoteStyle">Add new item</button>
+                <div style={{ width: "80%" }} className="list-group marginBottomStyle paddItems mx-auto checkbox-list-group">
+                    {itemTags.map(item => { return item })}
+                </div>
+
+            </div>
+        );
+    }
+
     render() {
         try {
             return (
@@ -67,42 +114,11 @@ export default class NoteComp extends React.Component<IProps, IState> {
                                 </div>
                             </div>
                             <div className="row mx-auto noteWidth">
-                                <div className="col-md-12 disablePadding">
-                                    <div className="list-group  checkbox-list-group">
-                                        <div className=" autoBr list-group-item disableBorderRadiusStyle">&nbsp;<label><input type="checkbox" /><span className="list-group-item-text EditItemStyle"><i className="fa fa-fw"></i> wash dishes</span></label></div>
-                                        <div className="autoBr list-group-item list-group-item-success"><label>&nbsp;<input type="checkbox" /><span className="list-group-item-text EditItemStyle"><i className="fa fa-fw"></i> make caffe</span></label></div>
-                                        <div className="autoBr list-group-item list-group-item-info"><label>&nbsp;<input type="checkbox" /><span className="list-group-item-text EditItemStyle"><i className="fa fa-fw"></i> throw garbage</span></label></div>
-                                        <div className="autoBr list-group-item list-group-item-warning"><label>&nbsp;<input type="checkbox" /><span className="list-group-item-text EditItemStyle"><i className="fa fa-fw"></i> wash dishes</span></label></div>
-                                        <div className="autoBr list-group-item editBorderStyleBottom list-group-item-danger"><label>&nbsp;<input type="checkbox" /><span className="list-group-item-text EditItemStyle"><i className="fa fa-fw"></i> wash dishes</span></label></div>
-                                    </div>
-                                </div>
+                                {this.loadList(this.props.store.notesList[this.props.store.currentNote].items)}
                             </div>
                         </div>
                     </div>
                 </div>
-                // <div className="col-lg-12 mx-auto paddingNotes">
-                //     <div className="row mx-auto nameStyle borderStyleTop">
-                //         <div className="col-2"></div>
-                //         <div className="col-8 autoBr noteNameStyle">
-                //             {this.props.store.notesList[this.state.id].name}
-                //         </div>
-                //         <div className="col-2">
-                //             <img onClick={() => this.props.store.deleteNote(this.props.id)} className="deleteNote" title="Delete Note" src={require(`../pictures/closeIcon.png`)} alt="" />
-                //         </div>
-                //     </div>
-                //     <div style={{ background: this.props.note.color }} className="row mx-auto autoBr itemsAreaStyle">
-                //     <div className="col-12">
-                //             <Link className="LinkStyle" title="Edit note" to="/note">
-                //                 {loadList(props.note.items)}
-                //             </Link>
-                //         </div>
-                //     </div>
-                //     <div style={{ background: props.note.color }} className="row mx-auto itemsAreaStyle borderStyleBottom">
-                //         <div className="col-12 dateStyle">
-                //             {loadDate(props.note)}
-                //         </div>
-                //     </div>
-                // </div>
             )
         }
         catch (e) {
