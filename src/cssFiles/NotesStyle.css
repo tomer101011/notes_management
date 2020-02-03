@@ -79,15 +79,15 @@
     transition: all 0.4s;
 }
 
-.undoMargin{
-    margin-bottom: 10px;
-    margin-left: 4px;
-}
-
 .undoStyle:hover {
     height: 30px;
     width: 30px;
     cursor: pointer;
+}
+
+.undoMargin {
+    margin-bottom: 10px !important;
+    margin-left: 4px !important;
 }
 
 .borderStyleTop {

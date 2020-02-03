@@ -54,7 +54,7 @@ class NoteComp extends React.Component<IProps, IState> {
                             <span title="Check item" className="list-group-item-text">
                                 <i className="fa fa-fw"></i>
                                 <input className="EditItemStyle" id={"t" + i} defaultValue={items[i].name} type="text" />
-                                <img onClick={() => alert()} className="undoStyle undoMargin" title="Undo deleted" src={require(`../pictures/closeIcon.png`)} alt="" />
+                                <img className="deleteIconStyle undoMargin" title="Undo deleted" src={require(`../pictures/deleteIcon.png`)} alt="" />
                             </span>
                         </label>
                     </div>
@@ -68,7 +68,7 @@ class NoteComp extends React.Component<IProps, IState> {
                             <span title="Check item" className="list-group-item-text">
                                 <i className="fa fa-fw"></i>
                                 <input className="EditItemStyle" defaultValue={items[i].name} type="text" />
-                                <img onClick={() => alert()} className="undoStyle undoMargin" title="Delete Item" src={require(`../pictures/closeIcon.png`)} alt="" />
+                                <img className="deleteIconStyle undoMargin" title="Delete Item" src={require(`../pictures/deleteIcon.png`)} alt="" />
                             </span>
                         </label>
                     </div>
@@ -120,7 +120,10 @@ class NoteComp extends React.Component<IProps, IState> {
         if (this.props.store.currentNote >= 0 &&
             this.props.store.currentNote < this.props.store.notesList.length)
 
-            return this.props.store.notesList[this.props.store.currentNote].name;
+            return (
+                <input className="EditItemStyle" id={"n" + this.props.store.currentNote}
+                    defaultValue={this.props.store.notesList[this.props.store.currentNote].name} type="text" />
+            );
     }
 
     render() {

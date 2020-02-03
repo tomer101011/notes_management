@@ -32,6 +32,8 @@ export class Store {
             new Item('English', this.generateRandomTrueFalse())], this.generateRandomColor(), new Date(), new Date())
     ];
 
+    max_amount_of_notes: number = 14;
+
     currentNote: number = -1;
 
     deletedNotes: Note[] = [];
@@ -50,7 +52,7 @@ export class Store {
         if (this.deletedNotes.length === 0)
             alert('There are no deleted notes left');
 
-        else if (this.notesList.length >= 10)
+        else if (this.notesList.length >= this.max_amount_of_notes)
             alert('Cannot undo. Maximum notes reached');
 
         else {
@@ -60,7 +62,7 @@ export class Store {
     }
 
     addNote = () => {
-        if (this.notesList.length >= 10)
+        if (this.notesList.length >= this.max_amount_of_notes)
             alert('You have reached the maximum amount of notes');
 
         else {
