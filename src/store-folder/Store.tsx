@@ -74,6 +74,7 @@ export class Store {
 
     addItem = () => {
         this.notesList[this.currentNote].items.push(new Item('New item', false));
+        this.notesList[this.currentNote].latestUpdateDate = new Date();
         this.notesList.push(Object(undefined));
         this.notesList.pop();
     }
