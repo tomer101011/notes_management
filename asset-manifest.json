@@ -1,26 +1,26 @@
 {
   "files": {
-    "main.css": "/notes_management/static/css/main.aaeb7a0e.chunk.css",
-    "main.js": "/notes_management/static/js/main.82666db7.chunk.js",
-    "main.js.map": "/notes_management/static/js/main.82666db7.chunk.js.map",
+    "main.css": "/notes_management/static/css/main.eef96c83.chunk.css",
+    "main.js": "/notes_management/static/js/main.74d06cad.chunk.js",
+    "main.js.map": "/notes_management/static/js/main.74d06cad.chunk.js.map",
     "runtime-main.js": "/notes_management/static/js/runtime-main.d274b5aa.js",
     "runtime-main.js.map": "/notes_management/static/js/runtime-main.d274b5aa.js.map",
     "static/css/2.47e06e2e.chunk.css": "/notes_management/static/css/2.47e06e2e.chunk.css",
-    "static/js/2.c992300c.chunk.js": "/notes_management/static/js/2.c992300c.chunk.js",
-    "static/js/2.c992300c.chunk.js.map": "/notes_management/static/js/2.c992300c.chunk.js.map",
+    "static/js/2.4911fb5c.chunk.js": "/notes_management/static/js/2.4911fb5c.chunk.js",
+    "static/js/2.4911fb5c.chunk.js.map": "/notes_management/static/js/2.4911fb5c.chunk.js.map",
     "index.html": "/notes_management/index.html",
-    "precache-manifest.ae9fda8fa3e142e98fbe6d1509175956.js": "/notes_management/precache-manifest.ae9fda8fa3e142e98fbe6d1509175956.js",
+    "precache-manifest.84fc05cb56e15961001de97b29bafa85.js": "/notes_management/precache-manifest.84fc05cb56e15961001de97b29bafa85.js",
     "service-worker.js": "/notes_management/service-worker.js",
     "static/css/2.47e06e2e.chunk.css.map": "/notes_management/static/css/2.47e06e2e.chunk.css.map",
-    "static/css/main.aaeb7a0e.chunk.css.map": "/notes_management/static/css/main.aaeb7a0e.chunk.css.map",
-    "static/js/2.c992300c.chunk.js.LICENSE": "/notes_management/static/js/2.c992300c.chunk.js.LICENSE",
+    "static/css/main.eef96c83.chunk.css.map": "/notes_management/static/css/main.eef96c83.chunk.css.map",
+    "static/js/2.4911fb5c.chunk.js.LICENSE": "/notes_management/static/js/2.4911fb5c.chunk.js.LICENSE",
     "static/media/closeIcon.png": "/notes_management/static/media/closeIcon.79c96a45.png"
   },
   "entrypoints": [
     "static/js/runtime-main.d274b5aa.js",
     "static/css/2.47e06e2e.chunk.css",
-    "static/js/2.c992300c.chunk.js",
-    "static/css/main.aaeb7a0e.chunk.css",
-    "static/js/main.82666db7.chunk.js"
+    "static/js/2.4911fb5c.chunk.js",
+    "static/css/main.eef96c83.chunk.css",
+    "static/js/main.74d06cad.chunk.js"
   ]
 }
