@@ -65,8 +65,14 @@ export class Store {
 
         else {
             let randomColor = this.generateRandomColor();
-            this.notesList.push(new Note('New Note',
+            this.notesList.push(new Note('New note',
                 [], randomColor, new Date(), new Date()));
         }
+    }
+
+    addItem = () => {
+        this.notesList[this.currentNote].items.push(new Item('New item', false));
+        this.notesList.push(Object(undefined));
+        this.notesList.pop();
     }
 }

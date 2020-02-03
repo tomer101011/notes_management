@@ -48,7 +48,7 @@ const List: React.FC<IProps> = (props) => {
         <div className="col-lg-4 paddingNotes">
             <div className="row mx-auto nameStyle borderStyleTop">
                 <div className="col-2">
-                    <img onClick={() => props.store.undoDeleted()} className="undoStyle" title="Undo Deleted" src={require(`../pictures/undoIcon.png`)} alt="" />
+                    <img onClick={() => props.store.undoDeleted()} className="undoStyle" title="Undo deleted" src={require(`../pictures/undoIcon.png`)} alt="" />
                 </div>
                 <div className="col-8 autoBr noteNameStyle">
                     {props.store.notesList[props.id].name}

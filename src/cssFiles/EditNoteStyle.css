@@ -10,13 +10,37 @@
     cursor: pointer;
 }
 
+.goBackStyle {
+    background-color: rgb(241, 155, 50);
+    border-color: rgb(241, 155, 50);
+    color: white;
+    border: none;
+    border-radius: .25rem;
+    padding: .375rem .75rem;
+    transition: ease-in-out background-color 0.15s
+}
+
+.goBackStyle:hover {
+    background-color: rgb(192, 122, 37);
+}
+
 .addNoteStyle {
     margin-top: 8px;
+    width: 40% !important;
+}
+
+.marginButton {
+    margin: 2px;
+    margin: 2px;
 }
 
 .EditItemStyle {
     font-weight: bold;
     color: rgb(5, 71, 133);
+    width: 60%;
+    text-align: center;
+    border: 1px solid rgb(5, 71, 133);
+    border-radius: 4px;
 }
 
 .disablePadding {
