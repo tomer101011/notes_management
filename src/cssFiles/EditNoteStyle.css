@@ -76,6 +76,10 @@
     padding: 10px 0 10px 0;
 }
 
+.margindeleteIcon {
+    margin: 15px !important;
+}
+
 .marginBottomStyle {
     margin-bottom: 10px !important;
 }

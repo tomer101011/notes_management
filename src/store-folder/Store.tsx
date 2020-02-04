@@ -6,8 +6,6 @@ import { Redirect } from 'react-router-dom';
 
 export class Store {
 
-    colorList: string[] = ['#FBE4BE', '#cfc', '#ccf', '#f5bf81', '#fab6f1', '#b6f5fa'];
-
     generateRandomColor = () => {
         return this.colorList[Math.floor(Math.random() * this.colorList.length)];
     }
@@ -15,6 +13,8 @@ export class Store {
     generateRandomTrueFalse = () => {
         return Math.floor(Math.random() * 2) === 1;
     }
+
+    colorList: string[] = ['#FBE4BE', '#cfc', '#ccf', '#f5bf81', '#fab6f1', '#b6f5fa'];
 
     notesList: Note[] = [
         new Note('Buy for home',
@@ -32,7 +32,7 @@ export class Store {
             new Item('English', this.generateRandomTrueFalse())], this.generateRandomColor(), new Date(), new Date())
     ];
 
-    max_amount_of_notes: number = 14;
+    max_amount_of_notes: number = 10;
 
     currentNote: number = -1;
 
@@ -48,7 +48,15 @@ export class Store {
         this.deletedNotes.push(deletedNote);
     }
 
-    undoDeleted = () => {
+    deleteItem = (index: number) => {
+        let deletedItem = this.notesList[this.currentNote].items.splice(index, 1)[0];
+        this.notesList[this.currentNote].deletedItems.push(deletedItem);
+        this.notesList[this.currentNote].latestUpdateDate = new Date();
+        this.notesList.push(Object(undefined));
+        this.notesList.pop();
+    }
+
+    undoDeletedNote = () => {
         if (this.deletedNotes.length === 0)
             alert('There are no deleted notes left');
 
@@ -59,6 +67,40 @@ export class Store {
             let deletedNote = this.deletedNotes.pop() as Note;
             this.notesList.push(deletedNote);
         }
+    }
+
+    undoDeletedItem = () => {
+        if (this.notesList[this.currentNote].deletedItems.length === 0)
+            alert('There are no deleted items left');
+
+        else {
+            let deletedItem = this.notesList[this.currentNote].deletedItems.pop() as Item;
+            this.notesList[this.currentNote].items.push(deletedItem);
+            this.notesList[this.currentNote].latestUpdateDate = new Date();
+            this.notesList.push(Object(undefined));
+            this.notesList.pop();
+        }
+    }
+
+    saveNote = () => {
+
+        let noteNameElement = document.getElementById('n' + this.currentNote) as HTMLInputElement;
+        if (noteNameElement.value !== '')
+            this.notesList[this.currentNote].name = noteNameElement.value;
+
+        for (let i = 0; i < this.notesList[this.currentNote].items.length; i++) {
+            let itemTextElement = document.getElementById('t' + i) as HTMLInputElement;
+            let itemCheckboxElement = document.getElementById('i' + i) as HTMLInputElement;
+
+            if (itemTextElement.value !== '')
+                this.notesList[this.currentNote].items[i].name = itemTextElement.value;
+
+            this.notesList[this.currentNote].items[i].isChecked = itemCheckboxElement.checked;
+        }
+        this.notesList[this.currentNote].latestUpdateDate = new Date();
+        alert('Item saved successfully!');
+        this.notesList.push(Object(undefined));
+        this.notesList.pop();
     }
 
     addNote = () => {

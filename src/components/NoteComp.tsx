@@ -47,43 +47,48 @@ class NoteComp extends React.Component<IProps, IState> {
         for (let i = 0; i < items.length; i++) {
             if (items[i].isChecked)
                 itemTags.push(
-                    <div key={i} className="autoBr list-group-item">
-                        &nbsp;
-                        <label className="addCursor">
-                            <input defaultChecked id={"i" + i} type="checkbox" />
-                            <span title="Check item" className="list-group-item-text">
-                                <i className="fa fa-fw"></i>
-                                <input className="EditItemStyle" id={"t" + i} defaultValue={items[i].name} type="text" />
-                                <img className="deleteIconStyle undoMargin" title="Undo deleted" src={require(`../pictures/deleteIcon.png`)} alt="" />
-                            </span>
-                        </label>
+                    <div className="row" key={i}>
+                        <div className="col-2 disablePadding">
+                            <img onClick={() => { this.props.store.deleteItem(i) }} className="deleteIconStyle margindeleteIcon undoMargin" title="Delete Item" src={require(`../pictures/deleteIcon.png`)} alt="" />
+                        </div>
+                        <div className="col-8 disablePadding">
+                            <div key={i} className="autoBr list-group-item">
+                                &nbsp;
+                                <label className="addCursor">
+                                    <input defaultChecked id={"i" + i} type="checkbox" />
+                                    <span title="Check item" className="list-group-item-text">
+                                        <i className="fa fa-fw"></i>
+                                        <input className="EditItemStyle" id={"t" + i} placeholder={items[i].name} type="text" />
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div className="col-2"></div>
                     </div>
                 );
             else
                 itemTags.push(
-                    <div key={i} className="autoBr list-group-item">
-                        &nbsp;
-                        <label className="addCursor">
-                            <input id={"i" + i} type="checkbox" />
-                            <span title="Check item" className="list-group-item-text">
-                                <i className="fa fa-fw"></i>
-                                <input className="EditItemStyle" defaultValue={items[i].name} type="text" />
-                                <img className="deleteIconStyle undoMargin" title="Delete Item" src={require(`../pictures/deleteIcon.png`)} alt="" />
-                            </span>
-                        </label>
+                    <div className="row" key={i}>
+                        <div className="col-2 disablePadding">
+                            <img onClick={() => { this.props.store.deleteItem(i) }} className="deleteIconStyle margindeleteIcon undoMargin" title="Delete Item" src={require(`../pictures/deleteIcon.png`)} alt="" />
+                        </div>
+                        <div className="col-8 disablePadding">
+                            <div className="autoBr list-group-item">
+                                &nbsp;
+                                <label className="addCursor">
+                                    <input id={"i" + i} type="checkbox" />
+                                    <span title="Check item" className="list-group-item-text">
+                                        <i className="fa fa-fw"></i>
+                                        <input className="EditItemStyle" id={"t" + i} placeholder={items[i].name} type="text" />
+                                    </span>
+                                </label>
+                            </div>
+                        </div>
+                        <div className="col-2"></div>
                     </div>
                 );
         }
         return itemTags;
-    }
-
-    loadDate = () => {
-        let note = this.props.store.notesList[this.props.store.currentNote];
-        if (note.items.length === 0)
-            return (<p>Date Created- {note.dateOfCreation.toLocaleString()}</p>);
-
-        else
-            return (<p>Latest Update- {note.latestUpdateDate.toLocaleString()}</p>);
     }
 
     loadList = () => {
@@ -97,9 +102,9 @@ class NoteComp extends React.Component<IProps, IState> {
                     className="col-md-12 editBorderStyleBottom disablePadding">
 
                     <div className="btn-group-justified mx-auto addNoteStyle" role="group" aria-label="Basic example">
-                        <button className=" btn btn-info marginButton">Undo deleted</button>
+                        <button onClick={() => this.props.store.undoDeletedItem()} className=" btn btn-info marginButton">Undo deleted</button>
                         <button onClick={() => this.props.store.addItem()} className="btn btn-success marginButton">Add new item</button>
-                        <button className=" btn btn-primary marginButton">Save note</button>
+                        <button onClick={() => this.props.store.saveNote()} className="btn btn-primary marginButton">Save note</button>
                     </div>
 
                     <div style={{ width: "80%" }} className="list-group marginBottomStyle paddItems mx-auto checkbox-list-group">
@@ -109,6 +114,17 @@ class NoteComp extends React.Component<IProps, IState> {
                 </div>
             );
         }
+    }
+
+
+    loadDate = () => {
+        let note = this.props.store.notesList[this.props.store.currentNote];
+
+        if (note.deletedItems.length > 0 || note.items.length > 0)
+            return (<p>Latest Update- {note.latestUpdateDate.toLocaleString()}</p>);
+
+        else
+            return (<p>Date Created- {note.dateOfCreation.toLocaleString()}</p>);
     }
 
     deleteNote = () => {
@@ -122,7 +138,7 @@ class NoteComp extends React.Component<IProps, IState> {
 
             return (
                 <input className="EditItemStyle nameEditStyle" id={"n" + this.props.store.currentNote}
-                    defaultValue={this.props.store.notesList[this.props.store.currentNote].name} type="text" />
+                    placeholder={this.props.store.notesList[this.props.store.currentNote].name} type="text" />
             );
     }
 

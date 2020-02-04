@@ -15,8 +15,11 @@ decorate(Store, {
   notesList: observable, //observable are like states
   deleteNote: action,// function that modifies observables
   addNote: action,
-  undoDeleted: action,
-  addItem: action
+  undoDeletedNote: action,
+  addItem: action,
+  deleteItem: action,
+  undoDeletedItem: action,
+  saveNote: action
 });
 
 const appData = new Store();
