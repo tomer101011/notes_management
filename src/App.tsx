@@ -13,7 +13,7 @@ import 'bootstrap/dist/css/bootstrap.min.css';
 
 decorate(Store, {
   notesList: observable, //observable are like states
-  deleteNote: action,// function that modifies observables
+  deleteNote: action, //action functions are those that modify observables
   addNote: action,
   undoDeletedNote: action,
   addItem: action,
@@ -22,6 +22,7 @@ decorate(Store, {
   saveNote: action
 });
 
+//create a store class to store all the app data and the related functions
 const appData = new Store();
 
 const App: React.FC = () => {

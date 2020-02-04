@@ -9,6 +9,7 @@ interface IProps {
 
 class Form extends React.Component<IProps> {
 
+    //load all the notes that are not deleted to the user
     loadNotes = () => {
         return (
             <div className="row">

@@ -10,6 +10,7 @@ interface IProps {
     store: Store;
 }
 
+//build an html array of items
 const builtList = (items: Item[]) => {
     let itemTags = [];
     for (let i = 0; i < items.length; i++) {
@@ -21,6 +22,7 @@ const builtList = (items: Item[]) => {
     return itemTags;
 }
 
+//load the list of items to the note
 const loadList = (items: Item[]) => {
     if (items.length === 0)
         return (<p className="messageStyle">Click to edit note</p>);
@@ -35,6 +37,7 @@ const loadList = (items: Item[]) => {
     }
 }
 
+//load the date when the note was changed to the screen
 const loadDate = (note: Note) => {
     if (note.deletedItems.length > 0 || note.items.length > 0)
         return (<p>Latest Update- {note.latestUpdateDate.toLocaleString()}</p>);
