@@ -151,13 +151,18 @@ class NoteComp extends React.Component<IProps, IState> {
             <div>
                 {this.props.store.doRedirect(ROUTES.HOME, this.state.changePage)}
                 <div className="row">
-                    <div className="col-lg-12">
+                    <div className="col-md-12">
                         <p className="headerStyle">Edit Note</p>
                     </div>
                 </div>
                 <div className="row">
                     <div className="col-md-12">
                         <Link to={ROUTES.HOME}><button className="goBackStyle newNoteStyle">Go back</button></Link>
+                    </div>
+                </div>
+                <div className="row">
+                    <div style={{ paddingBottom: "10px" }} className="col-md-12">
+                        <div title="You can press ESC to go back. Also note is saved automatically" className="helpTip mx-auto">?</div>
                     </div>
                 </div>
                 <div className="row">
