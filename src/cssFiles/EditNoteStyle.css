@@ -67,6 +67,11 @@
     height: 26px;
     cursor: default;
     padding-bottom: 2px !important;
+    border: none;
+}
+
+.paddingHelp {
+    padding-bottom: 10px;
 }
 
 .nameEditStyle {

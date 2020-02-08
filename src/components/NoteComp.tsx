@@ -161,8 +161,9 @@ class NoteComp extends React.Component<IProps, IState> {
                     </div>
                 </div>
                 <div className="row">
-                    <div style={{ paddingBottom: "10px" }} className="col-md-12">
-                        <div title="You can press ESC to go back. Also note is saved automatically" className="helpTip mx-auto">?</div>
+                    <div className="col-md-12 paddingHelp">
+                        <button onClick={() => alert("You can press ESC to go back.\nNote is saved automatically")} className="helpTip mx-auto"
+                            title="You can press ESC to go back. Note is saved automatically">?</button>
                     </div>
                 </div>
                 <div className="row">
