@@ -30,7 +30,7 @@ export class Store {
             new Item('make caffe', this.generateRandomTrueFalse()),
             new Item('throw garbage', this.generateRandomTrueFalse())], this.generateRandomColor(), new Date(), new Date()),
 
-        new Note('Do homeworks',
+        new Note('Do homework',
             [new Item('Math', this.generateRandomTrueFalse()),
             new Item('Computers', this.generateRandomTrueFalse()),
             new Item('English', this.generateRandomTrueFalse())], this.generateRandomColor(), new Date(), new Date())
