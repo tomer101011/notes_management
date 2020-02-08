@@ -63,10 +63,8 @@
     color: white;
     font-weight: bold;
     border-radius: 50%;
-    width: 26px;
-    height: 26px;
+    width: 25px;
     cursor: default;
-    padding-bottom: 2px !important;
     border: none;
 }
 
